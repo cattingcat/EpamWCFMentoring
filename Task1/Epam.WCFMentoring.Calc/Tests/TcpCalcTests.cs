@@ -15,7 +15,7 @@ namespace Tests
         [TestInitialize]
         public void ClassInit()
         {
-            var factory = new ChannelFactory<ICalcService>("httpCalc");
+            var factory = new ChannelFactory<ICalcService>("tcpCalc");
             ICalcService svc = factory.CreateChannel();
 
             _svc = svc;
