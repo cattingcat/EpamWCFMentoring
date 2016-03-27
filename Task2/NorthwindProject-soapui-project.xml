@@ -1,0 +1,1346 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="8c972225-a3ce-4158-a8f6-183b27682143" activeEnvironment="Default" name="NorthwindProject" resourceRoot="" soapui-version="5.2.1" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="ce28d61d-8d66-4fb3-838f-a36d0dca0d47" wsaVersion="NONE" name="BasicHttpBinding_IOrderService" type="wsdl" bindingName="{http://tempuri.org/}BasicHttpBinding_IOrderService" soapVersion="1_1" anonymous="optional" definition="http://localhost:55555/orderSvc?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:55555/orderSvc?wsdl"><con:part><con:url>http://localhost:55555/orderSvc?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="OrderServiceImpl" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://tempuri.org/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:55555/orderSvc?xsd=xsd0" namespace="http://tempuri.org/"/>
+      <xsd:import schemaLocation="http://localhost:55555/orderSvc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+      <xsd:import schemaLocation="http://localhost:55555/orderSvc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Epam.WCFMentoring.Northwind.Services.OrderSvc.Entities"/>
+      <xsd:import schemaLocation="http://localhost:55555/orderSvc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Epam.WCFMentoring.Northwind.Services.OrderSvc.Exceptions"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IOrderService_GetOrders_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrders"/>
+  </wsdl:message>
+  <wsdl:message name="IOrderService_GetOrders_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrdersResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IOrderService_GetDetais_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDetais"/>
+  </wsdl:message>
+  <wsdl:message name="IOrderService_GetDetais_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDetaisResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IOrderService_CreateOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateOrder"/>
+  </wsdl:message>
+  <wsdl:message name="IOrderService_CreateOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateOrderResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IOrderService_UpdateOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateOrder"/>
+  </wsdl:message>
+  <wsdl:message name="IOrderService_UpdateOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateOrderResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IOrderService_UpdateOrder_OrderNotFoundFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q1:OrderNotFoundFault" xmlns:q1="http://schemas.datacontract.org/2004/07/Epam.WCFMentoring.Northwind.Services.OrderSvc.Exceptions"/>
+  </wsdl:message>
+  <wsdl:message name="IOrderService_UpdateOrder_OrderBlockedFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q2:OrderBlockedFault" xmlns:q2="http://schemas.datacontract.org/2004/07/Epam.WCFMentoring.Northwind.Services.OrderSvc.Exceptions"/>
+  </wsdl:message>
+  <wsdl:message name="IOrderService_DeleteOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteOrder"/>
+  </wsdl:message>
+  <wsdl:message name="IOrderService_DeleteOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteOrderResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IOrderService_DeleteOrder_OrderAlreadyDoneFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q3:OrderAlreadyDoneFault" xmlns:q3="http://schemas.datacontract.org/2004/07/Epam.WCFMentoring.Northwind.Services.OrderSvc.Exceptions"/>
+  </wsdl:message>
+  <wsdl:message name="IOrderService_DeleteOrder_OrderNotFoundFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q4:OrderNotFoundFault" xmlns:q4="http://schemas.datacontract.org/2004/07/Epam.WCFMentoring.Northwind.Services.OrderSvc.Exceptions"/>
+  </wsdl:message>
+  <wsdl:message name="IOrderService_ToWork_InputMessage">
+    <wsdl:part name="parameters" element="tns:ToWork"/>
+  </wsdl:message>
+  <wsdl:message name="IOrderService_ToWork_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ToWorkResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IOrderService_ToWork_OrderAlreadyDoneFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q5:OrderAlreadyDoneFault" xmlns:q5="http://schemas.datacontract.org/2004/07/Epam.WCFMentoring.Northwind.Services.OrderSvc.Exceptions"/>
+  </wsdl:message>
+  <wsdl:message name="IOrderService_ToWork_OrderNotFoundFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q6:OrderNotFoundFault" xmlns:q6="http://schemas.datacontract.org/2004/07/Epam.WCFMentoring.Northwind.Services.OrderSvc.Exceptions"/>
+  </wsdl:message>
+  <wsdl:message name="IOrderService_ToDone_InputMessage">
+    <wsdl:part name="parameters" element="tns:ToDone"/>
+  </wsdl:message>
+  <wsdl:message name="IOrderService_ToDone_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ToDoneResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IOrderService_ToDone_OrderAlreadyDoneFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q7:OrderAlreadyDoneFault" xmlns:q7="http://schemas.datacontract.org/2004/07/Epam.WCFMentoring.Northwind.Services.OrderSvc.Exceptions"/>
+  </wsdl:message>
+  <wsdl:message name="IOrderService_ToDone_OrderNotFoundFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="q8:OrderNotFoundFault" xmlns:q8="http://schemas.datacontract.org/2004/07/Epam.WCFMentoring.Northwind.Services.OrderSvc.Exceptions"/>
+  </wsdl:message>
+  <wsdl:portType name="IOrderService">
+    <wsdl:operation name="GetOrders">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOrderService/GetOrders" message="tns:IOrderService_GetOrders_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IOrderService/GetOrdersResponse" message="tns:IOrderService_GetOrders_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetDetais">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOrderService/GetDetais" message="tns:IOrderService_GetDetais_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IOrderService/GetDetaisResponse" message="tns:IOrderService_GetDetais_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="CreateOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOrderService/CreateOrder" message="tns:IOrderService_CreateOrder_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IOrderService/CreateOrderResponse" message="tns:IOrderService_CreateOrder_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOrderService/UpdateOrder" message="tns:IOrderService_UpdateOrder_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IOrderService/UpdateOrderResponse" message="tns:IOrderService_UpdateOrder_OutputMessage"/>
+      <wsdl:fault wsaw:Action="http://tempuri.org/IOrderService/UpdateOrderOrderNotFoundFaultFault" name="OrderNotFoundFaultFault" message="tns:IOrderService_UpdateOrder_OrderNotFoundFaultFault_FaultMessage"/>
+      <wsdl:fault wsaw:Action="http://tempuri.org/IOrderService/UpdateOrderOrderBlockedFaultFault" name="OrderBlockedFaultFault" message="tns:IOrderService_UpdateOrder_OrderBlockedFaultFault_FaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOrderService/DeleteOrder" message="tns:IOrderService_DeleteOrder_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IOrderService/DeleteOrderResponse" message="tns:IOrderService_DeleteOrder_OutputMessage"/>
+      <wsdl:fault wsaw:Action="http://tempuri.org/IOrderService/DeleteOrderOrderAlreadyDoneFaultFault" name="OrderAlreadyDoneFaultFault" message="tns:IOrderService_DeleteOrder_OrderAlreadyDoneFaultFault_FaultMessage"/>
+      <wsdl:fault wsaw:Action="http://tempuri.org/IOrderService/DeleteOrderOrderNotFoundFaultFault" name="OrderNotFoundFaultFault" message="tns:IOrderService_DeleteOrder_OrderNotFoundFaultFault_FaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="ToWork">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOrderService/ToWork" message="tns:IOrderService_ToWork_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IOrderService/ToWorkResponse" message="tns:IOrderService_ToWork_OutputMessage"/>
+      <wsdl:fault wsaw:Action="http://tempuri.org/IOrderService/ToWorkOrderAlreadyDoneFaultFault" name="OrderAlreadyDoneFaultFault" message="tns:IOrderService_ToWork_OrderAlreadyDoneFaultFault_FaultMessage"/>
+      <wsdl:fault wsaw:Action="http://tempuri.org/IOrderService/ToWorkOrderNotFoundFaultFault" name="OrderNotFoundFaultFault" message="tns:IOrderService_ToWork_OrderNotFoundFaultFault_FaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="ToDone">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOrderService/ToDone" message="tns:IOrderService_ToDone_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IOrderService/ToDoneResponse" message="tns:IOrderService_ToDone_OutputMessage"/>
+      <wsdl:fault wsaw:Action="http://tempuri.org/IOrderService/ToDoneOrderAlreadyDoneFaultFault" name="OrderAlreadyDoneFaultFault" message="tns:IOrderService_ToDone_OrderAlreadyDoneFaultFault_FaultMessage"/>
+      <wsdl:fault wsaw:Action="http://tempuri.org/IOrderService/ToDoneOrderNotFoundFaultFault" name="OrderNotFoundFaultFault" message="tns:IOrderService_ToDone_OrderNotFoundFaultFault_FaultMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IOrderService" type="tns:IOrderService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="GetOrders">
+      <soap:operation soapAction="http://tempuri.org/IOrderService/GetOrders" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDetais">
+      <soap:operation soapAction="http://tempuri.org/IOrderService/GetDetais" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateOrder">
+      <soap:operation soapAction="http://tempuri.org/IOrderService/CreateOrder" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrder">
+      <soap:operation soapAction="http://tempuri.org/IOrderService/UpdateOrder" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="OrderNotFoundFaultFault">
+        <soap:fault name="OrderNotFoundFaultFault" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="OrderBlockedFaultFault">
+        <soap:fault name="OrderBlockedFaultFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteOrder">
+      <soap:operation soapAction="http://tempuri.org/IOrderService/DeleteOrder" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="OrderAlreadyDoneFaultFault">
+        <soap:fault name="OrderAlreadyDoneFaultFault" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="OrderNotFoundFaultFault">
+        <soap:fault name="OrderNotFoundFaultFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ToWork">
+      <soap:operation soapAction="http://tempuri.org/IOrderService/ToWork" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="OrderAlreadyDoneFaultFault">
+        <soap:fault name="OrderAlreadyDoneFaultFault" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="OrderNotFoundFaultFault">
+        <soap:fault name="OrderNotFoundFaultFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ToDone">
+      <soap:operation soapAction="http://tempuri.org/IOrderService/ToDone" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="OrderAlreadyDoneFaultFault">
+        <soap:fault name="OrderAlreadyDoneFaultFault" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="OrderNotFoundFaultFault">
+        <soap:fault name="OrderNotFoundFaultFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="OrderServiceImpl">
+    <wsdl:port name="BasicHttpBinding_IOrderService" binding="tns:BasicHttpBinding_IOrderService">
+      <soap:address location="http://localhost:55555/orderSvc"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://localhost:55555/orderSvc?xsd=xsd0</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://tempuri.org/">
+  <xs:import schemaLocation="http://localhost:55555/orderSvc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Epam.WCFMentoring.Northwind.Services.OrderSvc.Entities"/>
+  <xs:element name="GetOrders">
+    <xs:complexType>
+      <xs:sequence/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOrdersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetOrdersResult" nillable="true" type="q1:ArrayOfOrderDTO" xmlns:q1="http://schemas.datacontract.org/2004/07/Epam.WCFMentoring.Northwind.Services.OrderSvc.Entities"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDetais">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="orderId" type="xs:int"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDetaisResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetDetaisResult" nillable="true" type="q2:DetailedOrderDTO" xmlns:q2="http://schemas.datacontract.org/2004/07/Epam.WCFMentoring.Northwind.Services.OrderSvc.Entities"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateOrder">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="order" nillable="true" type="q3:NewOrderDTO" xmlns:q3="http://schemas.datacontract.org/2004/07/Epam.WCFMentoring.Northwind.Services.OrderSvc.Entities"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateOrderResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateOrderResult" nillable="true" type="q4:OrderDTO" xmlns:q4="http://schemas.datacontract.org/2004/07/Epam.WCFMentoring.Northwind.Services.OrderSvc.Entities"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateOrder">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="order" nillable="true" type="q5:ChangeOrderDTO" xmlns:q5="http://schemas.datacontract.org/2004/07/Epam.WCFMentoring.Northwind.Services.OrderSvc.Entities"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateOrderResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateOrderResult" nillable="true" type="q6:OrderDTO" xmlns:q6="http://schemas.datacontract.org/2004/07/Epam.WCFMentoring.Northwind.Services.OrderSvc.Entities"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteOrder">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="orderId" type="xs:int"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteOrderResponse">
+    <xs:complexType>
+      <xs:sequence/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ToWork">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="orderId" type="xs:int"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ToWorkResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ToWorkResult" nillable="true" type="q7:OrderDTO" xmlns:q7="http://schemas.datacontract.org/2004/07/Epam.WCFMentoring.Northwind.Services.OrderSvc.Entities"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ToDone">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="orderId" type="xs:int"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ToDoneResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ToDoneResult" nillable="true" type="q8:OrderDTO" xmlns:q8="http://schemas.datacontract.org/2004/07/Epam.WCFMentoring.Northwind.Services.OrderSvc.Entities"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:55555/orderSvc?xsd=xsd2</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Epam.WCFMentoring.Northwind.Services.OrderSvc.Entities" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.datacontract.org/2004/07/Epam.WCFMentoring.Northwind.Services.OrderSvc.Entities">
+  <xs:complexType name="ArrayOfOrderDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OrderDTO" nillable="true" type="tns:OrderDTO"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOrderDTO" nillable="true" type="tns:ArrayOfOrderDTO"/>
+  <xs:complexType name="OrderDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CustomerID" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="EmployeeID" nillable="true" type="xs:int"/>
+      <xs:element minOccurs="0" name="Freight" nillable="true" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="OrderDate" nillable="true" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="OrderID" type="xs:int"/>
+      <xs:element minOccurs="0" name="RequiredDate" nillable="true" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="ShipAddress" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ShipCity" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ShipCountry" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ShipName" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ShipPostalCode" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ShipRegion" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ShipVia" nillable="true" type="xs:int"/>
+      <xs:element minOccurs="0" name="ShippedDate" nillable="true" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="Status" type="tns:OrderStatus"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OrderDTO" nillable="true" type="tns:OrderDTO"/>
+  <xs:simpleType name="OrderStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="New"/>
+      <xs:enumeration value="InProgress"/>
+      <xs:enumeration value="Done"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="OrderStatus" nillable="true" type="tns:OrderStatus"/>
+  <xs:complexType name="DetailedOrderDTO">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OrderDTO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="OrderDetails" nillable="true" type="tns:ArrayOfOrderDetailsDTO"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DetailedOrderDTO" nillable="true" type="tns:DetailedOrderDTO"/>
+  <xs:complexType name="ArrayOfOrderDetailsDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OrderDetailsDTO" nillable="true" type="tns:OrderDetailsDTO"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOrderDetailsDTO" nillable="true" type="tns:ArrayOfOrderDetailsDTO"/>
+  <xs:complexType name="OrderDetailsDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Discount" type="xs:float"/>
+      <xs:element minOccurs="0" name="Product" nillable="true" type="tns:ProductDTO"/>
+      <xs:element minOccurs="0" name="Quantity" type="xs:short"/>
+      <xs:element minOccurs="0" name="UnitPrice" type="xs:decimal"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OrderDetailsDTO" nillable="true" type="tns:OrderDetailsDTO"/>
+  <xs:complexType name="ProductDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IsDiscontinued" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="ProductID" type="xs:int"/>
+      <xs:element minOccurs="0" name="ProductName" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="QuantityPerUnit" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ReorderLevel" nillable="true" type="xs:short"/>
+      <xs:element minOccurs="0" name="UnitPrice" nillable="true" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="UnitsInStock" nillable="true" type="xs:short"/>
+      <xs:element minOccurs="0" name="UnitsOnOrder" nillable="true" type="xs:short"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProductDTO" nillable="true" type="tns:ProductDTO"/>
+  <xs:complexType name="NewOrderDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CustomerID" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="OrderID" type="xs:int"/>
+      <xs:element minOccurs="0" name="RequiredDate" nillable="true" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="ShipAddress" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ShipCity" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ShipCountry" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ShipName" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ShipPostalCode" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ShipRegion" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NewOrderDTO" nillable="true" type="tns:NewOrderDTO"/>
+  <xs:complexType name="ChangeOrderDTO">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:NewOrderDTO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="OrderDetails" nillable="true" type="tns:ArrayOfOrderDetailsDTO"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ChangeOrderDTO" nillable="true" type="tns:ChangeOrderDTO"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:55555/orderSvc?xsd=xsd1</con:url><con:content><![CDATA[<xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/">
+  <xs:element name="anyType" nillable="true" type="xs:anyType"/>
+  <xs:element name="anyURI" nillable="true" type="xs:anyURI"/>
+  <xs:element name="base64Binary" nillable="true" type="xs:base64Binary"/>
+  <xs:element name="boolean" nillable="true" type="xs:boolean"/>
+  <xs:element name="byte" nillable="true" type="xs:byte"/>
+  <xs:element name="dateTime" nillable="true" type="xs:dateTime"/>
+  <xs:element name="decimal" nillable="true" type="xs:decimal"/>
+  <xs:element name="double" nillable="true" type="xs:double"/>
+  <xs:element name="float" nillable="true" type="xs:float"/>
+  <xs:element name="int" nillable="true" type="xs:int"/>
+  <xs:element name="long" nillable="true" type="xs:long"/>
+  <xs:element name="QName" nillable="true" type="xs:QName"/>
+  <xs:element name="short" nillable="true" type="xs:short"/>
+  <xs:element name="string" nillable="true" type="xs:string"/>
+  <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte"/>
+  <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt"/>
+  <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong"/>
+  <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort"/>
+  <xs:element name="char" nillable="true" type="tns:char"/>
+  <xs:simpleType name="char">
+    <xs:restriction base="xs:int"/>
+  </xs:simpleType>
+  <xs:element name="duration" nillable="true" type="tns:duration"/>
+  <xs:simpleType name="duration">
+    <xs:restriction base="xs:duration">
+      <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?"/>
+      <xs:minInclusive value="-P10675199DT2H48M5.4775808S"/>
+      <xs:maxInclusive value="P10675199DT2H48M5.4775807S"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="guid" nillable="true" type="tns:guid"/>
+  <xs:simpleType name="guid">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:attribute name="FactoryType" type="xs:QName"/>
+  <xs:attribute name="Id" type="xs:ID"/>
+  <xs:attribute name="Ref" type="xs:IDREF"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:55555/orderSvc?xsd=xsd3</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Epam.WCFMentoring.Northwind.Services.OrderSvc.Exceptions" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.datacontract.org/2004/07/Epam.WCFMentoring.Northwind.Services.OrderSvc.Exceptions">
+  <xs:complexType name="OrderNotFoundFault">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:element name="OrderNotFoundFault" nillable="true" type="tns:OrderNotFoundFault"/>
+  <xs:complexType name="OrderBlockedFault">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OrderBlockedFault" nillable="true" type="tns:OrderBlockedFault"/>
+  <xs:complexType name="OrderAlreadyDoneFault">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:element name="OrderAlreadyDoneFault" nillable="true" type="tns:OrderAlreadyDoneFault"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:55555/orderSvc</con:endpoint><con:endpoint>http://localhost:55556/orderSvc</con:endpoint></con:endpoints><con:operation id="ef66f0fe-65bf-4de0-bf67-1eac8358c1be" isOneWay="false" action="http://tempuri.org/IOrderService/CreateOrder" name="CreateOrder" bindingOperationName="CreateOrder" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="7e09142a-b3c8-4981-9472-149e2fd2fe33" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:55555/orderSvc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/" xmlns:epam="http://schemas.datacontract.org/2004/07/Epam.WCFMentoring.Northwind.Services.OrderSvc.Entities">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:CreateOrder>\r
+         <!--Optional:-->\r
+         <tem:order>\r
+            <!--Optional:-->\r
+            <epam:CustomerID>?</epam:CustomerID>\r
+            <!--Optional:-->\r
+            <epam:OrderID>?</epam:OrderID>\r
+            <!--Optional:-->\r
+            <epam:RequiredDate>?</epam:RequiredDate>\r
+            <!--Optional:-->\r
+            <epam:ShipAddress>?</epam:ShipAddress>\r
+            <!--Optional:-->\r
+            <epam:ShipCity>?</epam:ShipCity>\r
+            <!--Optional:-->\r
+            <epam:ShipCountry>?</epam:ShipCountry>\r
+            <!--Optional:-->\r
+            <epam:ShipName>?</epam:ShipName>\r
+            <!--Optional:-->\r
+            <epam:ShipPostalCode>?</epam:ShipPostalCode>\r
+            <!--Optional:-->\r
+            <epam:ShipRegion>?</epam:ShipRegion>\r
+         </tem:order>\r
+      </tem:CreateOrder>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IOrderService/CreateOrder"/></con:call><con:call id="efc61835-cc90-493e-a603-64510ebd92ea" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:55555/orderSvc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/" xmlns:epam="http://schemas.datacontract.org/2004/07/Epam.WCFMentoring.Northwind.Services.OrderSvc.Entities">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:CreateOrder>\r
+         <!--Optional:-->\r
+         <tem:order>\r
+            <!--Optional:-->\r
+            <epam:CustomerID>?</epam:CustomerID>\r
+            <!--Optional:-->\r
+            <epam:OrderID>?</epam:OrderID>\r
+            <!--Optional:-->\r
+            <epam:RequiredDate>?</epam:RequiredDate>\r
+            <!--Optional:-->\r
+            <epam:ShipAddress>?</epam:ShipAddress>\r
+            <!--Optional:-->\r
+            <epam:ShipCity>?</epam:ShipCity>\r
+            <!--Optional:-->\r
+            <epam:ShipCountry>?</epam:ShipCountry>\r
+            <!--Optional:-->\r
+            <epam:ShipName>?</epam:ShipName>\r
+            <!--Optional:-->\r
+            <epam:ShipPostalCode>?</epam:ShipPostalCode>\r
+            <!--Optional:-->\r
+            <epam:ShipRegion>?</epam:ShipRegion>\r
+         </tem:order>\r
+      </tem:CreateOrder>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IOrderService/CreateOrder"/></con:call></con:operation><con:operation id="09e8e3e5-51e4-407d-b982-4a9765645b63" isOneWay="false" action="http://tempuri.org/IOrderService/DeleteOrder" name="DeleteOrder" bindingOperationName="DeleteOrder" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="12469707-cf37-44ea-8774-9b23b5672e3f" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:55555/orderSvc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:DeleteOrder>\r
+         <!--Optional:-->\r
+         <tem:orderId>?</tem:orderId>\r
+      </tem:DeleteOrder>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IOrderService/DeleteOrder"/></con:call><con:call id="a98b7551-5dae-4866-9f47-6beefc83d553" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:55555/orderSvc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:DeleteOrder>\r
+         <!--Optional:-->\r
+         <tem:orderId>?</tem:orderId>\r
+      </tem:DeleteOrder>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IOrderService/DeleteOrder"/></con:call></con:operation><con:operation id="38f49200-e3ea-428c-ae98-c4dbbd0c8c80" isOneWay="false" action="http://tempuri.org/IOrderService/GetDetais" name="GetDetais" bindingOperationName="GetDetais" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="0f37c3e5-0ac1-4c4d-8c6d-059fcba8fdae" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:55555/orderSvc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:GetDetais>\r
+         <!--Optional:-->\r
+         <tem:orderId>10248</tem:orderId>\r
+      </tem:GetDetais>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IOrderService/GetDetais"/><con:wsrmConfig version="1.2"/></con:call><con:call id="3db6b6cf-2c34-4c79-8448-03886521129f" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:55555/orderSvc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:GetDetais>\r
+         <!--Optional:-->\r
+         <tem:orderId>?</tem:orderId>\r
+      </tem:GetDetais>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IOrderService/GetDetais"/></con:call></con:operation><con:operation id="9da59dd1-a478-4fdb-ba6f-bdbb43a11ec0" isOneWay="false" action="http://tempuri.org/IOrderService/GetOrders" name="GetOrders" bindingOperationName="GetOrders" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="f74ec55e-84b9-4c1f-8cac-4ace45e011c5" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:55555/orderSvc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:GetOrders/>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IOrderService/GetOrders"/><con:wsrmConfig version="1.2"/></con:call><con:call id="1b6261b8-48fd-4c8d-9e60-f73b6dc79fc9" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:55555/orderSvc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:GetOrders/>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IOrderService/GetOrders"/></con:call></con:operation><con:operation id="01c478f9-decd-4b68-a57b-d50b00b13794" isOneWay="false" action="http://tempuri.org/IOrderService/ToDone" name="ToDone" bindingOperationName="ToDone" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="11824c5a-74ed-490c-a9fb-123d651c6279" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:55555/orderSvc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:ToDone>\r
+         <!--Optional:-->\r
+         <tem:orderId>?</tem:orderId>\r
+      </tem:ToDone>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IOrderService/ToDone"/><con:wsrmConfig version="1.2"/></con:call><con:call id="14e67a14-ac3f-4f96-81f6-39a542285d50" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:55555/orderSvc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:ToDone>\r
+         <!--Optional:-->\r
+         <tem:orderId>?</tem:orderId>\r
+      </tem:ToDone>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IOrderService/ToDone"/></con:call></con:operation><con:operation id="da1f1b28-4d05-4a21-bd93-833fe03183be" isOneWay="false" action="http://tempuri.org/IOrderService/ToWork" name="ToWork" bindingOperationName="ToWork" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="ee31f692-e3a7-4de0-88b8-46457f46a89d" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:55555/orderSvc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:ToWork>\r
+         <!--Optional:-->\r
+         <tem:orderId>?</tem:orderId>\r
+      </tem:ToWork>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IOrderService/ToWork"/></con:call><con:call id="b91284ce-ee14-4c7d-b36a-86ebe82dcc6f" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:55555/orderSvc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:ToWork>\r
+         <!--Optional:-->\r
+         <tem:orderId>?</tem:orderId>\r
+      </tem:ToWork>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IOrderService/ToWork"/></con:call></con:operation><con:operation id="f32ff74f-5228-44ad-8004-13e893353525" isOneWay="false" action="http://tempuri.org/IOrderService/UpdateOrder" name="UpdateOrder" bindingOperationName="UpdateOrder" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="933c5f30-8a24-4c32-a132-c6d2b8eb8e6e" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:55555/orderSvc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/" xmlns:epam="http://schemas.datacontract.org/2004/07/Epam.WCFMentoring.Northwind.Services.OrderSvc.Entities">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:UpdateOrder>\r
+         <!--Optional:-->\r
+         <tem:order>\r
+            <!--Optional:-->\r
+            <epam:CustomerID>?</epam:CustomerID>\r
+            <!--Optional:-->\r
+            <epam:OrderID>?</epam:OrderID>\r
+            <!--Optional:-->\r
+            <epam:RequiredDate>?</epam:RequiredDate>\r
+            <!--Optional:-->\r
+            <epam:ShipAddress>?</epam:ShipAddress>\r
+            <!--Optional:-->\r
+            <epam:ShipCity>?</epam:ShipCity>\r
+            <!--Optional:-->\r
+            <epam:ShipCountry>?</epam:ShipCountry>\r
+            <!--Optional:-->\r
+            <epam:ShipName>?</epam:ShipName>\r
+            <!--Optional:-->\r
+            <epam:ShipPostalCode>?</epam:ShipPostalCode>\r
+            <!--Optional:-->\r
+            <epam:ShipRegion>?</epam:ShipRegion>\r
+            <!--Optional:-->\r
+            <epam:OrderDetails>\r
+               <!--Zero or more repetitions:-->\r
+               <epam:OrderDetailsDTO>\r
+                  <!--Optional:-->\r
+                  <epam:Discount>?</epam:Discount>\r
+                  <!--Optional:-->\r
+                  <epam:Product>\r
+                     <!--Optional:-->\r
+                     <epam:IsDiscontinued>?</epam:IsDiscontinued>\r
+                     <!--Optional:-->\r
+                     <epam:ProductID>?</epam:ProductID>\r
+                     <!--Optional:-->\r
+                     <epam:ProductName>?</epam:ProductName>\r
+                     <!--Optional:-->\r
+                     <epam:QuantityPerUnit>?</epam:QuantityPerUnit>\r
+                     <!--Optional:-->\r
+                     <epam:ReorderLevel>?</epam:ReorderLevel>\r
+                     <!--Optional:-->\r
+                     <epam:UnitPrice>?</epam:UnitPrice>\r
+                     <!--Optional:-->\r
+                     <epam:UnitsInStock>?</epam:UnitsInStock>\r
+                     <!--Optional:-->\r
+                     <epam:UnitsOnOrder>?</epam:UnitsOnOrder>\r
+                  </epam:Product>\r
+                  <!--Optional:-->\r
+                  <epam:Quantity>?</epam:Quantity>\r
+                  <!--Optional:-->\r
+                  <epam:UnitPrice>?</epam:UnitPrice>\r
+               </epam:OrderDetailsDTO>\r
+            </epam:OrderDetails>\r
+         </tem:order>\r
+      </tem:UpdateOrder>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IOrderService/UpdateOrder"/><con:wsrmConfig version="1.2"/></con:call><con:call id="5ea3706d-225f-4cf7-862a-04ae74336db7" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:55555/orderSvc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/" xmlns:epam="http://schemas.datacontract.org/2004/07/Epam.WCFMentoring.Northwind.Services.OrderSvc.Entities">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:UpdateOrder>\r
+         <!--Optional:-->\r
+         <tem:order>\r
+            <!--Optional:-->\r
+            <epam:CustomerID>?</epam:CustomerID>\r
+            <!--Optional:-->\r
+            <epam:OrderID>?</epam:OrderID>\r
+            <!--Optional:-->\r
+            <epam:RequiredDate>?</epam:RequiredDate>\r
+            <!--Optional:-->\r
+            <epam:ShipAddress>?</epam:ShipAddress>\r
+            <!--Optional:-->\r
+            <epam:ShipCity>?</epam:ShipCity>\r
+            <!--Optional:-->\r
+            <epam:ShipCountry>?</epam:ShipCountry>\r
+            <!--Optional:-->\r
+            <epam:ShipName>?</epam:ShipName>\r
+            <!--Optional:-->\r
+            <epam:ShipPostalCode>?</epam:ShipPostalCode>\r
+            <!--Optional:-->\r
+            <epam:ShipRegion>?</epam:ShipRegion>\r
+            <!--Optional:-->\r
+            <epam:OrderDetails>\r
+               <!--Zero or more repetitions:-->\r
+               <epam:OrderDetailsDTO>\r
+                  <!--Optional:-->\r
+                  <epam:Discount>?</epam:Discount>\r
+                  <!--Optional:-->\r
+                  <epam:Product>\r
+                     <!--Optional:-->\r
+                     <epam:IsDiscontinued>?</epam:IsDiscontinued>\r
+                     <!--Optional:-->\r
+                     <epam:ProductID>?</epam:ProductID>\r
+                     <!--Optional:-->\r
+                     <epam:ProductName>?</epam:ProductName>\r
+                     <!--Optional:-->\r
+                     <epam:QuantityPerUnit>?</epam:QuantityPerUnit>\r
+                     <!--Optional:-->\r
+                     <epam:ReorderLevel>?</epam:ReorderLevel>\r
+                     <!--Optional:-->\r
+                     <epam:UnitPrice>?</epam:UnitPrice>\r
+                     <!--Optional:-->\r
+                     <epam:UnitsInStock>?</epam:UnitsInStock>\r
+                     <!--Optional:-->\r
+                     <epam:UnitsOnOrder>?</epam:UnitsOnOrder>\r
+                  </epam:Product>\r
+                  <!--Optional:-->\r
+                  <epam:Quantity>?</epam:Quantity>\r
+                  <!--Optional:-->\r
+                  <epam:UnitPrice>?</epam:UnitPrice>\r
+               </epam:OrderDetailsDTO>\r
+            </epam:OrderDetails>\r
+         </tem:order>\r
+      </tem:UpdateOrder>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IOrderService/UpdateOrder"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="0f747f53-e6dd-4a7d-b89b-1c89ceaed503" wsaVersion="NONE" name="BasicHttpBinding_ICategoryService" type="wsdl" bindingName="{http://tempuri.org/}BasicHttpBinding_ICategoryService" soapVersion="1_1" anonymous="optional" definition="http://localhost:55555/categorySvc?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:55555/categorySvc?wsdl"><con:part><con:url>http://localhost:55555/categorySvc?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="CategoryServiceImpl" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://tempuri.org/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:55555/categorySvc?xsd=xsd0" namespace="http://tempuri.org/"/>
+      <xsd:import schemaLocation="http://localhost:55555/categorySvc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+      <xsd:import schemaLocation="http://localhost:55555/categorySvc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Epam.WCFMentoring.Northwind.Services.CategorySvc.Entities"/>
+      <xsd:import schemaLocation="http://localhost:55555/categorySvc?xsd=xsd3" namespace="http://schemas.microsoft.com/Message"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ICategoryService_GetCategories_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCategories"/>
+  </wsdl:message>
+  <wsdl:message name="ICategoryService_GetCategories_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCategoriesResponse"/>
+  </wsdl:message>
+  <wsdl:message name="CategoryIdDTO">
+    <wsdl:part name="parameters" element="tns:CategoryIdDTO"/>
+  </wsdl:message>
+  <wsdl:message name="CategoryIdDTO_Headers">
+    <wsdl:part name="Id" element="tns:Id"/>
+  </wsdl:message>
+  <wsdl:message name="CategoryDetailsDTO">
+    <wsdl:part name="parameters" element="tns:CategoryDetailsDTO"/>
+  </wsdl:message>
+  <wsdl:message name="CategoryDetailsDTO_Headers">
+    <wsdl:part name="CategoryID" element="tns:CategoryID"/>
+    <wsdl:part name="CategoryName" element="tns:CategoryName"/>
+    <wsdl:part name="Description" element="tns:Description"/>
+  </wsdl:message>
+  <wsdl:message name="ICategoryService_UpdateCategory_OutputMessage"/>
+  <wsdl:portType name="ICategoryService">
+    <wsdl:operation name="GetCategories">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICategoryService/GetCategories" message="tns:ICategoryService_GetCategories_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/ICategoryService/GetCategoriesResponse" message="tns:ICategoryService_GetCategories_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICategoryService/GetDetails" name="CategoryIdDTO" message="tns:CategoryIdDTO"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/ICategoryService/GetDetailsResponse" name="CategoryDetailsDTO" message="tns:CategoryDetailsDTO"/>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICategoryService/UpdateCategory" name="CategoryDetailsDTO" message="tns:CategoryDetailsDTO"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/ICategoryService/UpdateCategoryResponse" message="tns:ICategoryService_UpdateCategory_OutputMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ICategoryService" type="tns:ICategoryService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="GetCategories">
+      <soap:operation soapAction="http://tempuri.org/ICategoryService/GetCategories" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDetails">
+      <soap:operation soapAction="http://tempuri.org/ICategoryService/GetDetails" style="document"/>
+      <wsdl:input name="CategoryIdDTO">
+        <soap:header message="tns:CategoryIdDTO_Headers" part="Id" use="literal"/>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="CategoryDetailsDTO">
+        <soap:header message="tns:CategoryDetailsDTO_Headers" part="CategoryID" use="literal"/>
+        <soap:header message="tns:CategoryDetailsDTO_Headers" part="CategoryName" use="literal"/>
+        <soap:header message="tns:CategoryDetailsDTO_Headers" part="Description" use="literal"/>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCategory">
+      <soap:operation soapAction="http://tempuri.org/ICategoryService/UpdateCategory" style="document"/>
+      <wsdl:input name="CategoryDetailsDTO">
+        <soap:header message="tns:CategoryDetailsDTO_Headers" part="CategoryID" use="literal"/>
+        <soap:header message="tns:CategoryDetailsDTO_Headers" part="CategoryName" use="literal"/>
+        <soap:header message="tns:CategoryDetailsDTO_Headers" part="Description" use="literal"/>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CategoryServiceImpl">
+    <wsdl:port name="BasicHttpBinding_ICategoryService" binding="tns:BasicHttpBinding_ICategoryService">
+      <soap:address location="http://localhost:55555/categorySvc"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://localhost:55555/categorySvc?xsd=xsd0</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://tempuri.org/">
+  <xs:import schemaLocation="http://localhost:55555/categorySvc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Epam.WCFMentoring.Northwind.Services.CategorySvc.Entities"/>
+  <xs:import schemaLocation="http://localhost:55555/categorySvc?xsd=xsd3" namespace="http://schemas.microsoft.com/Message"/>
+  <xs:element name="GetCategories">
+    <xs:complexType>
+      <xs:sequence/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCategoriesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetCategoriesResult" nillable="true" type="q1:ArrayOfCategoryDTO" xmlns:q1="http://schemas.datacontract.org/2004/07/Epam.WCFMentoring.Northwind.Services.CategorySvc.Entities"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CategoryIdDTO">
+    <xs:complexType>
+      <xs:sequence/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Id" type="xs:int"/>
+  <xs:element name="CategoryDetailsDTO">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Picture" type="q2:StreamBody" xmlns:q2="http://schemas.microsoft.com/Message"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CategoryID" type="xs:int"/>
+  <xs:element name="CategoryName" nillable="true" type="xs:string"/>
+  <xs:element name="Description" nillable="true" type="xs:string"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:55555/categorySvc?xsd=xsd2</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Epam.WCFMentoring.Northwind.Services.CategorySvc.Entities" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.datacontract.org/2004/07/Epam.WCFMentoring.Northwind.Services.CategorySvc.Entities">
+  <xs:complexType name="ArrayOfCategoryDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CategoryDTO" nillable="true" type="tns:CategoryDTO"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCategoryDTO" nillable="true" type="tns:ArrayOfCategoryDTO"/>
+  <xs:complexType name="CategoryDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CategoryID" type="xs:int"/>
+      <xs:element minOccurs="0" name="CategoryName" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CategoryDTO" nillable="true" type="tns:CategoryDTO"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:55555/categorySvc?xsd=xsd3</con:url><con:content>&lt;xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/Message" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/Message">
+  &lt;xs:simpleType name="StreamBody">
+    &lt;xs:restriction base="xs:base64Binary"/>
+  &lt;/xs:simpleType>
+&lt;/xs:schema></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:55555/categorySvc?xsd=xsd1</con:url><con:content><![CDATA[<xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/">
+  <xs:element name="anyType" nillable="true" type="xs:anyType"/>
+  <xs:element name="anyURI" nillable="true" type="xs:anyURI"/>
+  <xs:element name="base64Binary" nillable="true" type="xs:base64Binary"/>
+  <xs:element name="boolean" nillable="true" type="xs:boolean"/>
+  <xs:element name="byte" nillable="true" type="xs:byte"/>
+  <xs:element name="dateTime" nillable="true" type="xs:dateTime"/>
+  <xs:element name="decimal" nillable="true" type="xs:decimal"/>
+  <xs:element name="double" nillable="true" type="xs:double"/>
+  <xs:element name="float" nillable="true" type="xs:float"/>
+  <xs:element name="int" nillable="true" type="xs:int"/>
+  <xs:element name="long" nillable="true" type="xs:long"/>
+  <xs:element name="QName" nillable="true" type="xs:QName"/>
+  <xs:element name="short" nillable="true" type="xs:short"/>
+  <xs:element name="string" nillable="true" type="xs:string"/>
+  <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte"/>
+  <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt"/>
+  <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong"/>
+  <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort"/>
+  <xs:element name="char" nillable="true" type="tns:char"/>
+  <xs:simpleType name="char">
+    <xs:restriction base="xs:int"/>
+  </xs:simpleType>
+  <xs:element name="duration" nillable="true" type="tns:duration"/>
+  <xs:simpleType name="duration">
+    <xs:restriction base="xs:duration">
+      <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?"/>
+      <xs:minInclusive value="-P10675199DT2H48M5.4775808S"/>
+      <xs:maxInclusive value="P10675199DT2H48M5.4775807S"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="guid" nillable="true" type="tns:guid"/>
+  <xs:simpleType name="guid">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:attribute name="FactoryType" type="xs:QName"/>
+  <xs:attribute name="Id" type="xs:ID"/>
+  <xs:attribute name="Ref" type="xs:IDREF"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:55555/categorySvc</con:endpoint></con:endpoints><con:operation id="15bc33bb-1691-4d2a-b869-219e8f24d207" isOneWay="false" action="http://tempuri.org/ICategoryService/GetCategories" name="GetCategories" bindingOperationName="GetCategories" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="b2b48f44-d521-41a0-ba1e-8cd1305158ba" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:55555/categorySvc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:GetCategories/>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ICategoryService/GetCategories"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="522e63d3-b59a-458b-b875-fe5bdd441b34" isOneWay="false" action="http://tempuri.org/ICategoryService/GetDetails" name="GetDetails" bindingOperationName="GetDetails" type="Request-Response" outputName="CategoryDetailsDTO" inputName="CategoryIdDTO" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="bafcb7cb-d948-46e0-b919-ba8868357ea4" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:55555/categorySvc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header>\r
+      <tem:Id>?</tem:Id>\r
+   </soapenv:Header>\r
+   <soapenv:Body>\r
+      <tem:CategoryIdDTO/>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ICategoryService/GetDetails"/></con:call></con:operation><con:operation id="44253bca-6328-4fdd-9875-81585acd60b4" isOneWay="false" action="http://tempuri.org/ICategoryService/UpdateCategory" name="UpdateCategory" bindingOperationName="UpdateCategory" type="Request-Response" inputName="CategoryDetailsDTO" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="6c7ee9a4-d19e-472c-9e2f-316bde1ec524" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:55555/categorySvc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header>\r
+      <tem:Description>?</tem:Description>\r
+      <tem:CategoryName>?</tem:CategoryName>\r
+      <tem:CategoryID>?</tem:CategoryID>\r
+   </soapenv:Header>\r
+   <soapenv:Body>\r
+      <tem:CategoryDetailsDTO>\r
+         <tem:Picture>cid:477110295790</tem:Picture>\r
+      </tem:CategoryDetailsDTO>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ICategoryService/UpdateCategory"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="84f6c3ad-0571-4b96-a91a-cd3218724c0f" wsaVersion="200508" name="WSDualHttpBinding_IPubSubService" type="wsdl" bindingName="{http://tempuri.org/}WSDualHttpBinding_IPubSubService" soapVersion="1_2" anonymous="optional" definition="http://localhost:55555/pubSubSvc?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:55555/pubSubSvc?wsdl"><con:part><con:url>http://localhost:55555/pubSubSvc?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="PubSubServiceImpl" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://tempuri.org/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata">
+  <wsp:Policy wsu:Id="WSDualHttpBinding_IPubSubService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsrm:RMAssertion xmlns:wsrm="http://schemas.xmlsoap.org/ws/2005/02/rm/policy">
+          <wsrm:InactivityTimeout Milliseconds="600000"/>
+          <wsrm:AcknowledgementInterval Milliseconds="200"/>
+        </wsrm:RMAssertion>
+        <sp:SymmetricBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:ProtectionToken>
+              <wsp:Policy>
+                <sp:SecureConversationToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+                  <wsp:Policy>
+                    <sp:RequireDerivedKeys/>
+                    <sp:BootstrapPolicy>
+                      <wsp:Policy>
+                        <sp:SignedParts>
+                          <sp:Body/>
+                          <sp:Header Name="ChannelInstance" Namespace="http://schemas.microsoft.com/ws/2005/02/duplex"/>
+                          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing"/>
+                          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing"/>
+                          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing"/>
+                          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing"/>
+                          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing"/>
+                          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing"/>
+                          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing"/>
+                        </sp:SignedParts>
+                        <sp:EncryptedParts>
+                          <sp:Body/>
+                        </sp:EncryptedParts>
+                        <sp:SymmetricBinding>
+                          <wsp:Policy>
+                            <sp:ProtectionToken>
+                              <wsp:Policy>
+                                <sp:SpnegoContextToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+                                  <wsp:Policy>
+                                    <sp:RequireDerivedKeys/>
+                                  </wsp:Policy>
+                                </sp:SpnegoContextToken>
+                              </wsp:Policy>
+                            </sp:ProtectionToken>
+                            <sp:AlgorithmSuite>
+                              <wsp:Policy>
+                                <sp:Basic256/>
+                              </wsp:Policy>
+                            </sp:AlgorithmSuite>
+                            <sp:Layout>
+                              <wsp:Policy>
+                                <sp:Strict/>
+                              </wsp:Policy>
+                            </sp:Layout>
+                            <sp:IncludeTimestamp/>
+                            <sp:EncryptSignature/>
+                            <sp:OnlySignEntireHeadersAndBody/>
+                          </wsp:Policy>
+                        </sp:SymmetricBinding>
+                        <sp:Wss11>
+                          <wsp:Policy/>
+                        </sp:Wss11>
+                        <sp:Trust10>
+                          <wsp:Policy>
+                            <sp:MustSupportIssuedTokens/>
+                            <sp:RequireClientEntropy/>
+                            <sp:RequireServerEntropy/>
+                          </wsp:Policy>
+                        </sp:Trust10>
+                      </wsp:Policy>
+                    </sp:BootstrapPolicy>
+                  </wsp:Policy>
+                </sp:SecureConversationToken>
+              </wsp:Policy>
+            </sp:ProtectionToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256/>
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict/>
+              </wsp:Policy>
+            </sp:Layout>
+            <sp:IncludeTimestamp/>
+            <sp:EncryptSignature/>
+            <sp:OnlySignEntireHeadersAndBody/>
+          </wsp:Policy>
+        </sp:SymmetricBinding>
+        <sp:Wss11 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy/>
+        </sp:Wss11>
+        <sp:Trust10 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:MustSupportIssuedTokens/>
+            <sp:RequireClientEntropy/>
+            <sp:RequireServerEntropy/>
+          </wsp:Policy>
+        </sp:Trust10>
+        <cdp:CompositeDuplex xmlns:cdp="http://schemas.microsoft.com/net/2006/06/duplex"/>
+        <ow:OneWay xmlns:ow="http://schemas.microsoft.com/ws/2005/05/routing/policy"/>
+        <wsaw:UsingAddressing/>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSDualHttpBinding_IPubSubService_Subscribe_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body/>
+          <sp:Header Name="Sequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm"/>
+          <sp:Header Name="SequenceAcknowledgement" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm"/>
+          <sp:Header Name="AckRequested" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm"/>
+          <sp:Header Name="ChannelInstance" Namespace="http://schemas.microsoft.com/ws/2005/02/duplex"/>
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing"/>
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing"/>
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing"/>
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing"/>
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing"/>
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing"/>
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing"/>
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body/>
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSDualHttpBinding_IPubSubService_Subscribe_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body/>
+          <sp:Header Name="Sequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm"/>
+          <sp:Header Name="SequenceAcknowledgement" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm"/>
+          <sp:Header Name="AckRequested" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm"/>
+          <sp:Header Name="ChannelInstance" Namespace="http://schemas.microsoft.com/ws/2005/02/duplex"/>
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing"/>
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing"/>
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing"/>
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing"/>
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing"/>
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing"/>
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing"/>
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body/>
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSDualHttpBinding_IPubSubService_Unsubscribe_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body/>
+          <sp:Header Name="Sequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm"/>
+          <sp:Header Name="SequenceAcknowledgement" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm"/>
+          <sp:Header Name="AckRequested" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm"/>
+          <sp:Header Name="ChannelInstance" Namespace="http://schemas.microsoft.com/ws/2005/02/duplex"/>
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing"/>
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing"/>
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing"/>
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing"/>
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing"/>
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing"/>
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing"/>
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body/>
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSDualHttpBinding_IPubSubService_Unsubscribe_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body/>
+          <sp:Header Name="Sequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm"/>
+          <sp:Header Name="SequenceAcknowledgement" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm"/>
+          <sp:Header Name="AckRequested" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm"/>
+          <sp:Header Name="ChannelInstance" Namespace="http://schemas.microsoft.com/ws/2005/02/duplex"/>
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing"/>
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing"/>
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing"/>
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing"/>
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing"/>
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing"/>
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing"/>
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body/>
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSDualHttpBinding_IPubSubService_StatusChange_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body/>
+          <sp:Header Name="Sequence" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm"/>
+          <sp:Header Name="SequenceAcknowledgement" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm"/>
+          <sp:Header Name="AckRequested" Namespace="http://schemas.xmlsoap.org/ws/2005/02/rm"/>
+          <sp:Header Name="ChannelInstance" Namespace="http://schemas.microsoft.com/ws/2005/02/duplex"/>
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing"/>
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing"/>
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing"/>
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing"/>
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing"/>
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing"/>
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing"/>
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body/>
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:55555/pubSubSvc?xsd=xsd0" namespace="http://tempuri.org/"/>
+      <xsd:import schemaLocation="http://localhost:55555/pubSubSvc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+      <xsd:import schemaLocation="http://localhost:55555/pubSubSvc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Epam.WCFMentoring.Northwind.Services.OrderSvc.Entities"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IPubSubService_Subscribe_InputMessage">
+    <wsdl:part name="parameters" element="tns:Subscribe"/>
+  </wsdl:message>
+  <wsdl:message name="IPubSubService_Subscribe_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SubscribeResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IPubSubService_Unsubscribe_InputMessage">
+    <wsdl:part name="parameters" element="tns:Unsubscribe"/>
+  </wsdl:message>
+  <wsdl:message name="IPubSubService_Unsubscribe_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UnsubscribeResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IPubSubService_StatusChange_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:StatusChange"/>
+  </wsdl:message>
+  <wsdl:portType msc:usingSession="true" name="IPubSubService">
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="Subscribe">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPubSubService/Subscribe" message="tns:IPubSubService_Subscribe_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IPubSubService/SubscribeResponse" message="tns:IPubSubService_Subscribe_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="Unsubscribe">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPubSubService/Unsubscribe" message="tns:IPubSubService_Unsubscribe_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IPubSubService/UnsubscribeResponse" message="tns:IPubSubService_Unsubscribe_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="StatusChange">
+      <wsdl:output wsaw:Action="http://tempuri.org/IPubSubService/StatusChange" message="tns:IPubSubService_StatusChange_OutputCallbackMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSDualHttpBinding_IPubSubService" type="tns:IPubSubService">
+    <wsp:PolicyReference URI="#WSDualHttpBinding_IPubSubService_policy"/>
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="Subscribe">
+      <soap12:operation soapAction="http://tempuri.org/IPubSubService/Subscribe" style="document"/>
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSDualHttpBinding_IPubSubService_Subscribe_Input_policy"/>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSDualHttpBinding_IPubSubService_Subscribe_output_policy"/>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Unsubscribe">
+      <soap12:operation soapAction="http://tempuri.org/IPubSubService/Unsubscribe" style="document"/>
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSDualHttpBinding_IPubSubService_Unsubscribe_Input_policy"/>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSDualHttpBinding_IPubSubService_Unsubscribe_output_policy"/>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StatusChange">
+      <soap12:operation soapAction="http://tempuri.org/IPubSubService/StatusChange" style="document"/>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSDualHttpBinding_IPubSubService_StatusChange_output_policy"/>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PubSubServiceImpl">
+    <wsdl:port name="WSDualHttpBinding_IPubSubService" binding="tns:WSDualHttpBinding_IPubSubService">
+      <soap12:address location="http://localhost:55555/pubSubSvc"/>
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://localhost:55555/pubSubSvc</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Upn>Mark_Martynov@samara.epam.com</Upn>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://localhost:55555/pubSubSvc?xsd=xsd0</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://tempuri.org/">
+  <xs:import schemaLocation="http://localhost:55555/pubSubSvc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Epam.WCFMentoring.Northwind.Services.OrderSvc.Entities"/>
+  <xs:element name="Subscribe">
+    <xs:complexType>
+      <xs:sequence/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubscribeResponse">
+    <xs:complexType>
+      <xs:sequence/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Unsubscribe">
+    <xs:complexType>
+      <xs:sequence/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UnsubscribeResponse">
+    <xs:complexType>
+      <xs:sequence/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StatusChange">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="order" nillable="true" type="q1:OrderDTO" xmlns:q1="http://schemas.datacontract.org/2004/07/Epam.WCFMentoring.Northwind.Services.OrderSvc.Entities"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:55555/pubSubSvc?xsd=xsd2</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Epam.WCFMentoring.Northwind.Services.OrderSvc.Entities" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.datacontract.org/2004/07/Epam.WCFMentoring.Northwind.Services.OrderSvc.Entities">
+  <xs:complexType name="OrderDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CustomerID" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="EmployeeID" nillable="true" type="xs:int"/>
+      <xs:element minOccurs="0" name="Freight" nillable="true" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="OrderDate" nillable="true" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="OrderID" type="xs:int"/>
+      <xs:element minOccurs="0" name="RequiredDate" nillable="true" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="ShipAddress" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ShipCity" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ShipCountry" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ShipName" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ShipPostalCode" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ShipRegion" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ShipVia" nillable="true" type="xs:int"/>
+      <xs:element minOccurs="0" name="ShippedDate" nillable="true" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="Status" type="tns:OrderStatus"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OrderDTO" nillable="true" type="tns:OrderDTO"/>
+  <xs:simpleType name="OrderStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="New"/>
+      <xs:enumeration value="InProgress"/>
+      <xs:enumeration value="Done"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="OrderStatus" nillable="true" type="tns:OrderStatus"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:55555/pubSubSvc?xsd=xsd1</con:url><con:content><![CDATA[<xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/">
+  <xs:element name="anyType" nillable="true" type="xs:anyType"/>
+  <xs:element name="anyURI" nillable="true" type="xs:anyURI"/>
+  <xs:element name="base64Binary" nillable="true" type="xs:base64Binary"/>
+  <xs:element name="boolean" nillable="true" type="xs:boolean"/>
+  <xs:element name="byte" nillable="true" type="xs:byte"/>
+  <xs:element name="dateTime" nillable="true" type="xs:dateTime"/>
+  <xs:element name="decimal" nillable="true" type="xs:decimal"/>
+  <xs:element name="double" nillable="true" type="xs:double"/>
+  <xs:element name="float" nillable="true" type="xs:float"/>
+  <xs:element name="int" nillable="true" type="xs:int"/>
+  <xs:element name="long" nillable="true" type="xs:long"/>
+  <xs:element name="QName" nillable="true" type="xs:QName"/>
+  <xs:element name="short" nillable="true" type="xs:short"/>
+  <xs:element name="string" nillable="true" type="xs:string"/>
+  <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte"/>
+  <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt"/>
+  <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong"/>
+  <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort"/>
+  <xs:element name="char" nillable="true" type="tns:char"/>
+  <xs:simpleType name="char">
+    <xs:restriction base="xs:int"/>
+  </xs:simpleType>
+  <xs:element name="duration" nillable="true" type="tns:duration"/>
+  <xs:simpleType name="duration">
+    <xs:restriction base="xs:duration">
+      <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?"/>
+      <xs:minInclusive value="-P10675199DT2H48M5.4775808S"/>
+      <xs:maxInclusive value="P10675199DT2H48M5.4775807S"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="guid" nillable="true" type="tns:guid"/>
+  <xs:simpleType name="guid">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:attribute name="FactoryType" type="xs:QName"/>
+  <xs:attribute name="Id" type="xs:ID"/>
+  <xs:attribute name="Ref" type="xs:IDREF"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:55555/pubSubSvc</con:endpoint></con:endpoints><con:operation id="62be4cb7-3e27-47be-8ba8-ec7be000f93d" isOneWay="false" action="http://tempuri.org/IPubSubService/StatusChange" name="StatusChange" bindingOperationName="StatusChange" type="Notification" inputName="" receivesAttachments="false" anonymous="optional"><con:settings/><con:call id="095d965a-3b98-48ff-8926-416e2f3ef716" name="Request 1" useWsAddressing="true"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:55555/pubSubSvc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/" xmlns:epam="http://schemas.datacontract.org/2004/07/Epam.WCFMentoring.Northwind.Services.OrderSvc.Entities">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <tem:StatusChange>\r
+         <!--Optional:-->\r
+         <tem:order>\r
+            <!--Optional:-->\r
+            <epam:CustomerID>?</epam:CustomerID>\r
+            <!--Optional:-->\r
+            <epam:EmployeeID>?</epam:EmployeeID>\r
+            <!--Optional:-->\r
+            <epam:Freight>?</epam:Freight>\r
+            <!--Optional:-->\r
+            <epam:OrderDate>?</epam:OrderDate>\r
+            <!--Optional:-->\r
+            <epam:OrderID>?</epam:OrderID>\r
+            <!--Optional:-->\r
+            <epam:RequiredDate>?</epam:RequiredDate>\r
+            <!--Optional:-->\r
+            <epam:ShipAddress>?</epam:ShipAddress>\r
+            <!--Optional:-->\r
+            <epam:ShipCity>?</epam:ShipCity>\r
+            <!--Optional:-->\r
+            <epam:ShipCountry>?</epam:ShipCountry>\r
+            <!--Optional:-->\r
+            <epam:ShipName>?</epam:ShipName>\r
+            <!--Optional:-->\r
+            <epam:ShipPostalCode>?</epam:ShipPostalCode>\r
+            <!--Optional:-->\r
+            <epam:ShipRegion>?</epam:ShipRegion>\r
+            <!--Optional:-->\r
+            <epam:ShipVia>?</epam:ShipVia>\r
+            <!--Optional:-->\r
+            <epam:ShippedDate>?</epam:ShippedDate>\r
+            <!--Optional:-->\r
+            <epam:Status>?</epam:Status>\r
+         </tem:order>\r
+      </tem:StatusChange>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508"/></con:call></con:operation><con:operation id="94b6e315-54a1-4d6c-be84-fb6bc9a42af2" isOneWay="false" action="http://tempuri.org/IPubSubService/Subscribe" name="Subscribe" bindingOperationName="Subscribe" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="4a689805-bf7d-4b57-96c7-da4c86fde5f0" name="Request 1" useWsAddressing="true"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:55555/pubSubSvc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <tem:Subscribe/>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IPubSubService/Subscribe"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="a668068e-44b7-4c11-8ade-dcf438a6a93a" isOneWay="false" action="http://tempuri.org/IPubSubService/Unsubscribe" name="Unsubscribe" bindingOperationName="Unsubscribe" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="dd8a15f3-1d4d-43a8-9aab-e32ac38a7b91" name="Request 1" useWsAddressing="true"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:55555/pubSubSvc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <tem:Unsubscribe/>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IPubSubService/Unsubscribe"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/></con:soapui-project>
